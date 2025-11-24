@@ -53,8 +53,7 @@ export const buildUserSystemPrompt = (
   userPreferences?: UserPreferences,
   agent?: Agent,
 ) => {
-  const assistantName =
-    agent?.name || userPreferences?.botName || "Neocortex";
+  const assistantName = agent?.name || userPreferences?.botName || "Neocortex";
   const currentTime = format(new Date(), "EEEE, MMMM d, yyyy 'at' h:mm:ss a");
 
   let prompt = `You are ${assistantName}, your user's digital mirror-self`;
@@ -165,7 +164,6 @@ export const buildSpeechSystemPrompt = (
 - Express understanding through vocal tone cues
 - Ask clarifying questions when context is unclear
 - Remember patterns from past voice interactions`;
-
 
   // Agent-specific instructions as primary core
   if (agent?.instructions?.systemPrompt) {
