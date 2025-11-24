@@ -1,6 +1,6 @@
 import "server-only";
 
-import { createOllama } from "ollama-ai-provider-v2";
+import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 import { openai } from "@ai-sdk/openai";
 import { google } from "@ai-sdk/google";
 import { anthropic } from "@ai-sdk/anthropic";
@@ -21,8 +21,10 @@ import {
   XAI_FILE_MIME_TYPES,
 } from "./file-support";
 
-const ollama = createOllama({
-  baseURL: process.env.OLLAMA_BASE_URL || "http://localhost:11434/api",
+const ollama = createOpenAICompatible({
+  name: "ollama",
+  baseURL: process.env.OLLAMA_BASE_URL || "http://localhost:11434/v1",
+  apiKey: process.env.OLLAMA_API_KEY || "ollama",
 });
 const groq = createGroq({
   baseURL: process.env.GROQ_BASE_URL || "https://api.groq.com/openai/v1",
@@ -58,6 +60,10 @@ const staticModels = {
     "grok-3-mini": xai("grok-3-mini"),
   },
   ollama: {
+    "llama3.2:3b": ollama("llama3.2:3b"),
+    "llama3.1:8b": ollama("llama3.1:8b"),
+    "deepseek-r1:7b": ollama("deepseek-r1:7b"),
+    "qwen2.5-coder:7b": ollama("qwen2.5-coder:7b"),
     "gemma3:1b": ollama("gemma3:1b"),
     "gemma3:4b": ollama("gemma3:4b"),
     "gemma3:12b": ollama("gemma3:12b"),
@@ -82,6 +88,7 @@ const staticModels = {
 
 const staticUnsupportedModels = new Set([
   staticModels.openai["o4-mini"],
+  staticModels.ollama["deepseek-r1:7b"],  // DeepSeek-R1 doesn't support function calling
   staticModels.ollama["gemma3:1b"],
   staticModels.ollama["gemma3:4b"],
   staticModels.ollama["gemma3:12b"],

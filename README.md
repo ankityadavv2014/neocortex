@@ -39,9 +39,11 @@ You only need **one AI Provider API Key** (OpenAI, Claude, Gemini, etc.). Everyt
 **Neocortex** - Your digital mirror-self. A context-aware AI workspace for individuals and teams that learns you, remembers what matters, and helps you simulate better outcomes. Inspired by ChatGPT, Claude, Grok, and Gemini.
 
 • **Multi-AI Support** - Integrates all major LLMs: OpenAI, Anthropic, Google, xAI, Ollama, and more  
+• **Local-First** - Run entirely offline with Ollama/vLLM - perfect for air-gapped security labs  
 • **Powerful Tools** - MCP protocol, web search, JS/Python code execution, data visualization  
 • **Image Generation** - Create and edit images with AI models (OpenAI, Google Gemini, xAI)  
 • **Automation** - Custom agents, visual workflows, artifact generation  
+• **Security Analysis** - Role-based agents for SOC, NetAdmin, RedTeam with log/PCAP analysis  
 • **Collaboration** - Share agents, workflows, and MCP configurations with your team  
 • **Voice Assistant** - Realtime voice chat with full MCP tool integration  
 • **Intuitive UX** - Instantly invoke any feature with `@mention`  
@@ -377,7 +379,14 @@ NOT_ALLOW_ADD_MCP_SERVERS=
 
 Step-by-step setup guides for running and configuring Neocortex.
 
-#### [🔌 MCP Server Setup & Tool Testing](./docs/tips-guides/mcp-server-setup-and-tool-testing.md)
+#### [� Local LLM Security Lab Setup](./docs/LOCAL_LLM_SECURITY_LAB.md)
+
+- **NEW**: Run Neocortex completely locally with Ollama/vLLM for air-gapped security analysis
+- Build SOC Analyst, Network Admin, and Red Team agents
+- Analyze firewall logs, PCAP files, and network traffic with local LLMs
+- Perfect for security labs, compliance requirements, or offline environments
+
+#### [�🔌 MCP Server Setup & Tool Testing](./docs/tips-guides/mcp-server-setup-and-tool-testing.md)
 
 - How to add and configure MCP servers in your environment
 

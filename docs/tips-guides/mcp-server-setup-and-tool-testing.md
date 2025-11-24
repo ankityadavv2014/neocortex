@@ -1,6 +1,26 @@
 # 🔧 MCP Server Configuration Guide
 
-> This guide explains how to add MCP servers by defining their configuration in JSON format. Each MCP server entry is stored in the database and supports different transport types: `stdio`, `SSE`, and `StreamableHTTP`.
+> This guide explains how to add MCP servers to Neocortex by defining their configuration in JSON format. Each MCP server entry is stored in the database and supports different transport types: `stdio`, `SSE`, and `StreamableHTTP`.
+
+## 🛡️ Neocortex MCP Philosophy: Local-First & Private
+
+Neocortex is designed for **local-first, private use**. We prioritize:
+
+- **Local MCP servers** running in your network (via `stdio`)
+- **Environment-based secrets** (never hardcoded tokens)
+- **Explicit external server warnings** (⚠️ for remote/hosted MCPs)
+- **No external registries** - you control what connects to your digital mirror-self
+
+### Installing MCP Servers in Neocortex
+
+To add an MCP server:
+
+1. **Run the MCP server locally** (via `npx`, `npm`, `pnpm`, `uv`, `docker`, etc.)
+2. **Add its configuration** through Neocortex UI (Settings → MCP Servers)
+3. **Use environment variables** for secrets (never paste tokens directly)
+4. **Enable/test** the server in Neocortex - no restart needed
+
+---
 
 You can add new MCP servers effortlessly through the UI — no need to restart the app. Each tool is available instantly and can be tested independently outside of chat. This is perfect for quick debugging and reliable development workflows.
 

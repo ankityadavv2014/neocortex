@@ -179,17 +179,6 @@ export default function MCPDashboard({ message, user }: MCPDashboardProps) {
               ) : null}
 
               {canCreate && (
-                <Link
-                  href="https://smithery.ai/"
-                  target="_blank"
-                  className="hidden sm:block"
-                >
-                  <Button className="font-semibold" variant={"ghost"}>
-                    {t("marketplace")}
-                  </Button>
-                </Link>
-              )}
-              {canCreate && (
                 <Link href="/mcp/create">
                   <Button
                     className="font-semibold bg-input/20"
