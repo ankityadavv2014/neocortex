@@ -7,6 +7,13 @@
 
 * complete local LLM security lab setup ([1348838](https://github.com/ankityadavv2014/neocortex/commit/13488386f7a06969137724bed16a91f1445c789c))
 
+## 1.0.0 (2025-11-24)
+
+
+### Features
+
+* complete local LLM security lab setup ([1348838](https://github.com/ankityadavv2014/neocortex/commit/13488386f7a06969137724bed16a91f1445c789c))
+
 ## [1.26.0](https://github.com/cgoinglove/better-chatbot/compare/v1.25.0...v1.26.0) (2025-11-07)
 
 
